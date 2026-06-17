@@ -1,29 +1,23 @@
 # token_cache.json
 import json
 import os
-from typing import Optional
 
-TOKEN_CACHE_FILE = "token_cache.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TOKEN_CACHE_FILE = os.path.join(BASE_DIR, "token_cache.json")
 
 def save_token_cache(token: str, timestamp: float) -> None:
     data = {"token": token, "timestamp": timestamp}
-    try:
-        with open(TOKEN_CACHE_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f)
-    except Exception as e:
-        print(f"토큰 저장 중 오류 발생: {e}")
+    with open(TOKEN_CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f)
 
 def load_token_cache() -> Optional[dict]:
     if not os.path.exists(TOKEN_CACHE_FILE):
-        print("토큰 캐시 파일이 없습니다.")
+        print("토큰 캐시 파일이 없어요!")
         return None
     try:
         with open(TOKEN_CACHE_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
         return data
-    except json.JSONDecodeError:
-        print("토큰 캐시 파일이 손상되었습니다. 파일을 삭제하고 다시 시도하세요.")
-        return None
     except Exception as e:
         print(f"토큰 로드 중 오류 발생: {e}")
         return None

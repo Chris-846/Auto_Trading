@@ -6,10 +6,7 @@ from typing import Optional
 TOKEN_CACHE_FILE = "token_cache.json"
 
 def save_token_cache(token: str, timestamp: float) -> None:
-    data = {
-        "token": token,
-        "timestamp": timestamp
-    }
+    data = {"token": token, "timestamp": timestamp }
     with open(TOKEN_CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f)
 

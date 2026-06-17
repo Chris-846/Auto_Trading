@@ -1,0 +1,24 @@
+# token_cache.json
+import json
+import os
+from typing import Optional
+
+TOKEN_CACHE_FILE = "token_cache.json"
+
+def save_token_cache(token: str, timestamp: float) -> None:
+    data = {
+        "token": token,
+        "timestamp": timestamp
+    }
+    with open(TOKEN_CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f)
+
+def load_token_cache() -> Optional[dict]:
+    if not os.path.exists(TOKEN_CACHE_FILE):
+        return None
+    try:
+        with open(TOKEN_CACHE_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data
+    except Exception:
+        return None

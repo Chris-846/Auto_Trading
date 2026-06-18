@@ -14,12 +14,7 @@ class Orders:
         self.api_client = api_client
         self.account_no = account_no
 
-    def place_order(self,
-                    stock_code: str,
-                    qty: int,
-                    price: int,
-                    order_type: str  # "buy" or "sell"
-                    ) -> Optional[Dict[str, Any]]:
+    def place_order(self, stock_code: str, qty: int, price: int, order_type: str  # "buy" or "sell") -> Optional[Dict[str, Any]]:
         """
         매수 또는 매도 주문 수행
 
@@ -36,14 +31,8 @@ class Orders:
 
         trade_type = "1" if order_type == "buy" else "2"  # 매수=1, 매도=2 (API 문서 확인 필수)
 
-        data = {
-            "CANO": self.account_no,
-            "PDNO": stock_code,
-            "ORDR_DVSN": trade_type,
-            "ORD_QTY": qty,
-            "ORD_UNPR": price,
+        data = {"CANO": self.account_no, "PDNO": stock_code, "ORDR_DVSN": trade_type, "ORD_QTY": qty, "ORD_UNPR": price}
             # 추가 파라미터 필요하면 확장
-        }
 
         logger.info(f"{order_type} 주문 요청: 종목 {stock_code}, 수량 {qty}, 가격 {price}")
 

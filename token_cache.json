@@ -1,23 +1,2 @@
 # token_cache.json
-import json
-import os
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-TOKEN_CACHE_FILE = os.path.join(BASE_DIR, "token_cache.json")
-
-def save_token_cache(token: str, timestamp: float) -> None:
-    data = {"token": token, "timestamp": timestamp}
-    with open(TOKEN_CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f)
-
-def load_token_cache() -> Optional[dict]:
-    if not os.path.exists(TOKEN_CACHE_FILE):
-        print("토큰 캐시 파일이 없어요!")
-        return None
-    try:
-        with open(TOKEN_CACHE_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return data
-    except Exception as e:
-        print(f"토큰 로드 중 오류 발생: {e}")
-        return None
+{"date": "2024-06-18", "access_token": "", "expires_in": 3600}

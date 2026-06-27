@@ -12,7 +12,7 @@ def maketoken(dist = "REAL"):
         "appsecret":Config.app_secret }
 
     # 한국투자증권에 Request
-    PATH = "oauth2/tokenP"
+    PATH = "/oauth2/tokenP"
     URL = f"{ Config.api_domai}/{PATH}"
     res = requests.post(URL, headers=headers, data=json.dumps(body))
     

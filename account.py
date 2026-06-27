@@ -1,4 +1,12 @@
-# account.py
+import logging
+
+from config_module import Config 
+from auth_module import Auth  
+from api_client_module import APIClient  
+
+logger = logging.getLogger(__name__)
+
+
 class Account:
     def __init__(self, config: Config, auth: Auth, api_client: APIClient, account_no: str):
         self.config = config

@@ -1,9 +1,10 @@
 import json
 import requests
+from config import Config
 
 def maketoken(config, dist="REAL"):
     headers = {"content-type": "application/json"}
-    body = {"grant_type": "client_credentials", "appkey": GH_APPKEY, "appsecret": GH_APPSECRET}
+    body = {"grant_type": "client_credentials", "appkey": Config.app_key, "appsecret": Config.app_secret}
 
     PATH = "/oauth2/tokenP"
     URL = f"{config.api_domain}/{PATH}"

@@ -12,7 +12,7 @@ from logger import get_logger
 
 logger = get_logger()
 
-TOKEN_CACHE_FILE = "token_cache.json"
+TOKEN_CACHE_FILE = "stock_token.json"
 TOKEN_VALIDITY_SECONDS = 3600  # 토큰 유효기간 (필요시 조절)
 
 API_URL_PATH = "/oauth2/tokenP"  # OAuth 토큰 발급 엔드포인트

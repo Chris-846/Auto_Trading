@@ -13,7 +13,7 @@ def maketoken(dist = "REAL"):
 
     # 한국투자증권에 Request
     PATH = "oauth2/tokenP"
-    URL = f"{Config.api_domain}/{PATH}"
+    URL = f"{'Config.api_domain'}/{PATH}"
     res = requests.post(URL, headers=headers, data=json.dumps(body))
     
     if res.status_code == 200:

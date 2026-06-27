@@ -53,7 +53,7 @@ class Config:
 
     @property
     def api_domain(self) -> str:
-        return self.get_env_var("gh_api_domain", required=False) or self.get_env_var("GH_API_DOMAIN", required=False) or "https://apiportal.koreainvestment.com"
+        return self.get_env_var("gh_api_domain", required=False) or self.get_env_var("GH_API_DOMAIN", required=False) or "https://openapivts.koreainvestment.com:29443"
 
     @property
     def user_agent(self) -> str:

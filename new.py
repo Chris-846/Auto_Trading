@@ -1,6 +1,6 @@
 import json
 import requests
-import Config from config
+from config import Config
 
 def maketoken(dist = "REAL"):
 
@@ -8,12 +8,12 @@ def maketoken(dist = "REAL"):
     
     headers = {"content-type":"application/json"}
     body = {"grant_type":"client_credentials",
-        "appkey":stock_info[config.app_key], 
-        "appsecret":stock_info[config.app_secret] }
+        "appkey": config.app_key, 
+        "appsecret":config.app_secret }
 
     # 한국투자증권에 Request
     PATH = "oauth2/tokenP"
-    URL = f"{stock_info[config.api_domain]}/{PATH}"
+    URL = f"{config.api_domain}/{PATH}"
     res = requests.post(URL, headers=headers, data=json.dumps(body))
     
     if res.status_code == 200:

@@ -1,9 +1,6 @@
 import json
 import requests
 
-import json
-import requests
-
 def maketoken(config, dist="REAL"):
     headers = {"content-type": "application/json"}
     body = {

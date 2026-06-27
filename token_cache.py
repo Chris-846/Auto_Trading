@@ -3,11 +3,9 @@ import requests
 
 def maketoken(config, dist="REAL"):
     headers = {"content-type": "application/json"}
-    body = {
-        "grant_type": "client_credentials",
+    body = {"grant_type": "client_credentials",
         "appkey": config.app_key,
-        "appsecret": config.app_secret
-    }
+        "appsecret": config.app_secret}
 
     PATH = "oauth2/tokenP"
     URL = f"{config.api_domain}/{PATH}"

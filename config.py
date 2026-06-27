@@ -57,4 +57,4 @@ class Config:
 
     @property
     def user_agent(self) -> str:
-        return self.get_env_var( "gh_user_agent", required=False) or self.get_env_var("GH_USER_AGENT", required=False) or "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+        return self.get_env_var( "gh_user_agent", required=False) or self.get_env_var("GH_USER_AGENT", required=False) or "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"

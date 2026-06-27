@@ -13,7 +13,7 @@ def maketoken(config, dist="REAL"):
         my_token = res.json().get("access_token")
 
         datadict = {"authorization": my_token}
-        with open('./token_cache.py', 'w') as outfile:
+        with open('./token_cache.json', 'w') as outfile:
             json.dump(datadict, outfile)
 
         print("My TOKEN:", my_token)

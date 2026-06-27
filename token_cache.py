@@ -5,7 +5,7 @@ def maketoken(config, dist="REAL"):
     headers = {"content-type": "application/json"}
     body = {"grant_type": "client_credentials", "appkey": config.app_key, "appsecret": config.app_secret}
 
-    PATH = "oauth2/tokenP"
+    PATH = "/oauth2/tokenP"
     URL = f"{config.api_domain}/{PATH}"
     res = requests.post(URL, headers=headers, data=json.dumps(body))
 

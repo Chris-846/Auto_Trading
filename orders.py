@@ -1,6 +1,6 @@
 #orders.py
 from typing import Optional, Dict, Any
-from config import Config
+from config import config
 from auth import Auth
 from api_client import APIClient
 from logger import get_logger

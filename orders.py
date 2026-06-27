@@ -14,7 +14,7 @@ class Orders:
         self.api_client = api_client
         self.account_no = account_no
 
-    def place_order(self, stock_code: str, qty: int, price: int, order_type: str  # "buy" or "sell") -> Optional[Dict[str, Any]]:
+    def place_order(self, stock_code: str, qty: int, price: int, order_type: str) -> Optional[Dict[str, Any]]:
         """
         매수 또는 매도 주문 수행
 
